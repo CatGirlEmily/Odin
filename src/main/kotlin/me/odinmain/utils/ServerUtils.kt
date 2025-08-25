@@ -29,7 +29,6 @@ object ServerUtils {
             pingStartTime = System.nanoTime()
             isPinging = true
 
-            sendCommand("getpingunknowncommand")
         }.register()
     }
 
@@ -37,7 +36,7 @@ object ServerUtils {
     fun onPacket(event: PacketEvent.Receive) {
         when (event.packet) {
             is S02PacketChat -> {
-                if (event.packet.chatComponent?.unformattedText?.noControlCodes?.let { unknownCommandRegex.matches(it) } == false) return
+                
                 averagePing = (System.nanoTime() - pingStartTime) / 1e6f
                 event.isCanceled = true
                 isPinging = false
