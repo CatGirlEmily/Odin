@@ -43,7 +43,7 @@ object LocationUtils {
         if (mc.isSingleplayer) currentArea = Island.SinglePlayer
 
         isOnHypixel = mc.runCatching {
-            !event.isLocal && ((thePlayer?.clientBrand?.contains("hypixel", true) ?: currentServerData?.serverIP?.contains("hypixel", true)) == true)
+            !event.isLocal && ((thePlayer?.clientBrand?.contains("fakepixel", true) ?: currentServerData?.serverIP?.contains("fakepixel", true)) == true)
         }.getOrDefault(false)
     }
 
@@ -52,7 +52,7 @@ object LocationUtils {
         when (event.packet) {
             is S3FPacketCustomPayload -> {
                 if (isOnHypixel || event.packet.channelName != "MC|Brand") return
-                if (event.packet.bufferData?.readStringFromBuffer(Short.MAX_VALUE.toInt())?.contains("hypixel", true) == true) isOnHypixel = true
+                if (event.packet.bufferData?.readStringFromBuffer(Short.MAX_VALUE.toInt())?.contains("fakepixel", true) == true) isOnHypixel = true
             }
 
             is S38PacketPlayerListItem -> {
