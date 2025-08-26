@@ -38,7 +38,7 @@ object ServerUtils {
             is S02PacketChat -> {
                 
                 averagePing = (System.nanoTime() - pingStartTime) / 1e6f
-                event.isCanceled = true
+            
                 isPinging = false
             }
 
