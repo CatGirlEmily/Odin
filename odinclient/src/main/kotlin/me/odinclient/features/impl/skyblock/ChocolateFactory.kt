@@ -26,8 +26,8 @@ object ChocolateFactory : Module(
 ) {
     private val clickFactory by BooleanSetting("Click Factory", false, desc = "Click the cookie in the Chocolate Factory menu.")
     private val autoUpgrade by BooleanSetting("Auto Upgrade", false, desc = "Automatically upgrade the worker.")
-    private val delay by NumberSetting("Delay", 150L, 50, 1500, 5, unit = "ms", desc = "Delay between actions.")
-    private val upgradeDelay by NumberSetting("Upgrade delay", 500L, 300, 2000, 100, unit = "ms", desc = "Delay between upgrades.")
+    private val delay by NumberSetting("Delay", 150L, 10, 1500, 5, unit = "ms", desc = "Delay between actions.")
+    private val upgradeDelay by NumberSetting("Upgrade delay", 500L, 10, 2000, 100, unit = "ms", desc = "Delay between upgrades.")
     private val claimStray by BooleanSetting("Claim Strays", false, desc = "Claim stray rabbits in the Chocolate Factory menu.")
     private val cancelSound by BooleanSetting("Cancel Sound", false, desc = "Cancels the eating sound in the Chocolate Factory.")
     private val upgradeMessage by BooleanSetting("Odin Upgrade Message", false, desc = "Prints a message when upgrading.")
